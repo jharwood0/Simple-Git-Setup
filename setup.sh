@@ -14,5 +14,13 @@ then
 	cache="git config --global credential.helper 'cache --timeout=3600'"
 	eval $cache
 fi
+echo "Would you like to set your default editor?"
+read yn
+if [ "$yn" = "y" ]
+	echo "Please enter your default editor:(emacs,vim,nano, etc..)"
+	read editor
+	edit="git config --global core.editor $editor"
+	eval $edit
+fi
 echo "All Done!"
-git config -l
+git config -list
