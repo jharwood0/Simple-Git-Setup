@@ -1,3 +1,5 @@
+#!/bin/bash
+
 echo "##~Please install git first~##"
 echo "Please enter a name:"
 read name
