@@ -7,5 +7,12 @@ user_name="git config --global user.name \"$name\" "
 email_address="git config --global user.email \"$email\" "
 eval $user_name
 eval $email_address
+echo "Would you like to cache your username and password?(y/n)"
+read yn
+if [ "$yn" = "y" ]
+then
+	cache="git config --global credential.helper 'cache --timeout=3600'"
+	eval $cache
+fi
 echo "All Done!"
 git config -l
